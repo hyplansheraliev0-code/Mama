@@ -1,0 +1,966 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Для мамы ❤️</title>
+
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+
+        body {
+
+            margin: 0;
+
+            min-height: 100vh;
+
+            overflow-x: hidden;
+
+            font-family:
+                Georgia,
+                "Times New Roman",
+                serif;
+
+            color: white;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #ff9a9e,
+                    #fad0c4,
+                    #fbc2eb
+                );
+
+        }
+
+
+        /* =========================
+           ЭКРАН
+        ========================= */
+
+        .screen {
+
+            width: 100%;
+
+            min-height: 100vh;
+
+            display: flex;
+
+            flex-direction: column;
+
+            justify-content: center;
+
+            align-items: center;
+
+            text-align: center;
+
+            padding: 25px;
+
+        }
+
+
+        .hidden {
+
+            display: none !important;
+
+        }
+
+
+        /* =========================
+           ПЕРВЫЙ ЭКРАН
+        ========================= */
+
+        #start {
+
+            animation:
+                startAppear
+                1.5s
+                ease;
+
+        }
+
+
+        @keyframes startAppear {
+
+            from {
+
+                opacity: 0;
+
+                transform:
+                    scale(0.8);
+
+            }
+
+            to {
+
+                opacity: 1;
+
+                transform:
+                    scale(1);
+
+            }
+
+        }
+
+
+        .subtitle {
+
+            font-size:
+                clamp(
+                    24px,
+                    6vw,
+                    36px
+                );
+
+            margin-bottom: 35px;
+
+            text-shadow:
+                0 3px 12px
+                rgba(120, 30, 60, 0.6);
+
+        }
+
+
+        /* =========================
+           КНОПКА
+        ========================= */
+
+        button {
+
+            border: none;
+
+            padding:
+                18px
+                40px;
+
+            border-radius: 50px;
+
+            background: white;
+
+            color: #e85d75;
+
+            font-size: 23px;
+
+            font-weight: bold;
+
+            font-family:
+                Georgia,
+                "Times New Roman",
+                serif;
+
+            cursor: pointer;
+
+            box-shadow:
+                0 10px 30px
+                rgba(100, 20, 50, 0.25);
+
+            transition:
+                transform 0.3s,
+                box-shadow 0.3s;
+
+        }
+
+
+        button:hover {
+
+            transform:
+                scale(1.08);
+
+            box-shadow:
+                0 15px 35px
+                rgba(100, 20, 50, 0.3);
+
+        }
+
+
+        button:active {
+
+            transform:
+                scale(0.94);
+
+        }
+
+
+        /* =========================
+           ВТОРОЙ ЭКРАН
+        ========================= */
+
+        #love {
+
+            justify-content:
+                flex-start;
+
+            padding-top: 35px;
+
+            padding-bottom: 50px;
+
+        }
+
+
+        /* =========================
+           ФОТОГРАФИИ
+        ========================= */
+
+        .gallery {
+
+            width: 100%;
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            gap: 22px;
+
+            flex-wrap: wrap;
+
+            margin-bottom: 25px;
+
+        }
+
+
+        .photo {
+
+            width:
+                min(
+                    42vw,
+                    300px
+                );
+
+            height:
+                min(
+                    55vw,
+                    390px
+                );
+
+            object-fit: cover;
+
+            border-radius: 25px;
+
+            border: 4px solid white;
+
+            box-shadow:
+                0 12px 35px
+                rgba(100, 30, 70, 0.3);
+
+            opacity: 0;
+
+        }
+
+
+        /* =========================
+           ПЕРВАЯ ФОТОГРАФИЯ
+        ========================= */
+
+        .photo1 {
+
+            animation:
+                firstPhoto
+                1.5s
+                ease
+                0.3s
+                forwards;
+
+        }
+
+
+        @keyframes firstPhoto {
+
+            0% {
+
+                opacity: 0;
+
+                transform:
+                    translateX(-120px)
+                    rotate(-12deg)
+                    scale(0.65);
+
+            }
+
+
+            70% {
+
+                transform:
+                    translateX(10px)
+                    rotate(2deg)
+                    scale(1.04);
+
+            }
+
+
+            100% {
+
+                opacity: 1;
+
+                transform:
+                    translateX(0)
+                    rotate(-3deg)
+                    scale(1);
+
+            }
+
+        }
+
+
+        /* =========================
+           ВТОРАЯ ФОТОГРАФИЯ
+        ========================= */
+
+        .photo2 {
+
+            animation:
+                secondPhoto
+                1.5s
+                ease
+                1.5s
+                forwards;
+
+        }
+
+
+        @keyframes secondPhoto {
+
+            0% {
+
+                opacity: 0;
+
+                transform:
+                    translateX(120px)
+                    rotate(12deg)
+                    scale(0.65);
+
+            }
+
+
+            70% {
+
+                transform:
+                    translateX(-10px)
+                    rotate(-2deg)
+                    scale(1.04);
+
+            }
+
+
+            100% {
+
+                opacity: 1;
+
+                transform:
+                    translateX(0)
+                    rotate(3deg)
+                    scale(1);
+
+            }
+
+        }
+
+
+        /* =========================
+           ЗАГОЛОВОК
+        ========================= */
+
+        .love-title {
+
+            opacity: 0;
+
+            font-size:
+                clamp(
+                    38px,
+                    9vw,
+                    70px
+                );
+
+            margin:
+                10px
+                0
+                25px;
+
+            text-shadow:
+
+                0 0 12px white,
+
+                0 0 25px #e85d75,
+
+                0 0 45px #ff6f91;
+
+            animation:
+                titleAppear
+                1.5s
+                ease
+                3.1s
+                forwards;
+
+        }
+
+
+        @keyframes titleAppear {
+
+            from {
+
+                opacity: 0;
+
+                transform:
+                    scale(0.4)
+                    translateY(50px);
+
+            }
+
+
+            to {
+
+                opacity: 1;
+
+                transform:
+                    scale(1)
+                    translateY(0);
+
+            }
+
+        }
+
+
+        /* =========================
+           ПОЖЕЛАНИЯ
+        ========================= */
+
+        .wishes {
+
+            width:
+                min(
+                    700px,
+                    95%
+                );
+
+            font-size: 20px;
+
+            line-height: 1.7;
+
+        }
+
+
+        .wish {
+
+            opacity: 0;
+
+            margin:
+                15px
+                0;
+
+            padding:
+                16px
+                20px;
+
+            border-radius: 22px;
+
+            background:
+                rgba(
+                    255,
+                    255,
+                    255,
+                    0.18
+                );
+
+            backdrop-filter:
+                blur(6px);
+
+            box-shadow:
+                0 6px 20px
+                rgba(100, 30, 70, 0.12);
+
+        }
+
+
+        .wish:nth-child(1) {
+
+            animation:
+                wishAppear
+                1s
+                ease
+                4s
+                forwards;
+
+        }
+
+
+        .wish:nth-child(2) {
+
+            animation:
+                wishAppear
+                1s
+                ease
+                4.8s
+                forwards;
+
+        }
+
+
+        .wish:nth-child(3) {
+
+            animation:
+                wishAppear
+                1s
+                ease
+                5.6s
+                forwards;
+
+        }
+
+
+        .wish:nth-child(4) {
+
+            animation:
+                wishAppear
+                1s
+                ease
+                6.4s
+                forwards;
+
+        }
+
+
+        .wish:nth-child(5) {
+
+            animation:
+                wishAppear
+                1s
+                ease
+                7.2s
+                forwards;
+
+        }
+
+
+        @keyframes wishAppear {
+
+            from {
+
+                opacity: 0;
+
+                transform:
+                    translateY(35px)
+                    scale(0.9);
+
+            }
+
+
+            to {
+
+                opacity: 1;
+
+                transform:
+                    translateY(0)
+                    scale(1);
+
+            }
+
+        }
+
+
+        /* =========================
+           ЛЕТЯЩИЕ СЕРДЦА
+        ========================= */
+
+        .heart {
+
+            position: fixed;
+
+            bottom: -60px;
+
+            pointer-events: none;
+
+            z-index: 100;
+
+            animation:
+                flyHeart
+                linear
+                forwards;
+
+        }
+
+
+        @keyframes flyHeart {
+
+            0% {
+
+                transform:
+                    translateY(0)
+                    rotate(0deg);
+
+                opacity: 0;
+
+            }
+
+
+            15% {
+
+                opacity: 1;
+
+            }
+
+
+            100% {
+
+                transform:
+                    translateY(-110vh)
+                    rotate(360deg);
+
+                opacity: 0;
+
+            }
+
+        }
+
+
+        /* =========================
+           ТЕЛЕФОН
+        ========================= */
+
+        @media (max-width: 600px) {
+
+            .gallery {
+
+                gap: 12px;
+
+            }
+
+
+            .photo {
+
+                width: 43vw;
+
+                height: 58vw;
+
+            }
+
+
+            .wishes {
+
+                font-size: 17px;
+
+            }
+
+
+            .wish {
+
+                padding:
+                    13px
+                    15px;
+
+            }
+
+
+            .love-title {
+
+                margin-top: 10px;
+
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================
+         ПЕРВЫЙ ЭКРАН
+    ========================= -->
+
+    <div
+        class="screen"
+        id="start"
+    >
+
+        <div class="subtitle">
+
+            Сен үчүн бир нерсе бар... ❤️
+
+        </div>
+
+
+        <button
+            onclick="showLove()"
+        >
+
+            МЕНИ БАС ❤️
+
+        </button>
+
+    </div>
+
+
+
+    <!-- =========================
+         ВТОРОЙ ЭКРАН
+    ========================= -->
+
+    <div
+        class="screen hidden"
+        id="love"
+    >
+
+
+        <!-- ФОТОГРАФИИ -->
+
+        <div class="gallery">
+
+
+            <!-- ПЕРВАЯ ФОТОГРАФИЯ -->
+
+            <img
+                src="photo1.jpeg"
+                class="photo photo1"
+                alt="Семейная фотография"
+            >
+
+
+            <!-- ВТОРАЯ ФОТОГРАФИЯ -->
+
+            <img
+                src="photo2.jpeg"
+                class="photo photo2"
+                alt="Семейная фотография"
+            >
+
+        </div>
+
+
+
+        <!-- ГЛАВНАЯ НАДПИСЬ -->
+
+        <h1 class="love-title">
+
+            Я вас люблю, мама ❤️
+
+        </h1>
+
+
+
+        <!-- ПОЖЕЛАНИЯ -->
+
+        <div class="wishes">
+
+
+            <div class="wish">
+
+                ❤️ Желаю вам крепкого здоровья,
+                счастья и долгих лет жизни!
+
+            </div>
+
+
+            <div class="wish">
+
+                🌸 Пусть каждый день вашей жизни
+                будет наполнен радостью,
+                улыбками и теплом.
+
+            </div>
+
+
+            <div class="wish">
+
+                🏡 Пусть в нашем доме всегда
+                царят любовь, спокойствие,
+                счастье и уют.
+
+            </div>
+
+
+            <div class="wish">
+
+                ✨ Пусть все ваши мечты
+                обязательно сбываются,
+                а рядом всегда будут
+                родные и близкие люди.
+
+            </div>
+
+
+            <div class="wish">
+
+                💕 Спасибо вам за всё,
+                что вы для меня сделали.
+                Я очень вас люблю,
+                ценю и всегда буду рядом.
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+
+    <script>
+
+
+        /* =========================
+           ОТКРЫТИЕ САЙТА
+        ========================= */
+
+        function showLove() {
+
+
+            /* Убираем первый экран */
+
+            document
+                .getElementById("start")
+                .classList
+                .add("hidden");
+
+
+            /* Показываем второй экран */
+
+            document
+                .getElementById("love")
+                .classList
+                .remove("hidden");
+
+
+            /* Создаём первые сердечки */
+
+            for (
+                let i = 0;
+                i < 35;
+                i++
+            ) {
+
+                setTimeout(
+                    createHeart,
+                    i * 120
+                );
+
+            }
+
+        }
+
+
+
+        /* =========================
+           СОЗДАНИЕ СЕРДЕЧКА
+        ========================= */
+
+        function createHeart() {
+
+
+            const heart =
+                document.createElement("div");
+
+
+            heart.className =
+                "heart";
+
+
+            const symbols = [
+
+                "❤️",
+                "💕",
+                "💗",
+                "💖",
+                "💓",
+                "🌸",
+                "✨"
+
+            ];
+
+
+            heart.textContent =
+                symbols[
+                    Math.floor(
+                        Math.random() *
+                        symbols.length
+                    )
+                ];
+
+
+            heart.style.left =
+                Math.random() *
+                100 +
+                "vw";
+
+
+            heart.style.fontSize =
+                20 +
+                Math.random() *
+                30 +
+                "px";
+
+
+            heart.style.animationDuration =
+                4 +
+                Math.random() *
+                5 +
+                "s";
+
+
+            document
+                .body
+                .appendChild(heart);
+
+
+            setTimeout(
+                function () {
+
+                    heart.remove();
+
+                },
+                10000
+            );
+
+        }
+
+
+
+        /* =========================
+           ПОСТОЯННЫЕ СЕРДЕЧКИ
+        ========================= */
+
+        setInterval(
+            function () {
+
+
+                const love =
+                    document
+                    .getElementById("love");
+
+
+                if (
+                    !love
+                        .classList
+                        .contains("hidden")
+                ) {
+
+                    createHeart();
+
+                }
+
+            },
+            600
+        );
+
+
+    </script>
+
+
+</body>
+
+</html>
